@@ -29,26 +29,26 @@
   <!-- Vercel Speed Insights -->
   <script defer src="/_vercel/speed-insights/script.js"></script>
   
-  <link rel="canonical" href="https://agobtpagogroup.vercel.app"/>
+  <link rel="canonical" href="https://agobtp.agogroup.co"/>
 
-  <!-- Favicon personnalisé (SVG fourni) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://agobtpagogroup.vercel.app"/>
+  <meta property="og:url" content="https://agobtp.agogroup.co"/>
   <meta property="og:title" content="AGOBTP – Maîtrise d'œuvre et suivi de chantier à Lomé, Togo"/>
   <meta property="og:description" content="Construction, maître d'ouvrage, coordination, rapports hebdomadaires et paiement sécurisé par jalons. Diaspora ou résident, pilotez votre chantier à distance."/>
-  <meta property="og:image" content="https://agobtpagogroup.vercel.app/assets/images/og-image.jpg"/>
+  <meta property="og:image" content="https://agobtp.agogroup.co/assets/images/og-image.jpg"/>
   <meta property="og:locale" content="fr_FR"/>
   <meta property="og:site_name" content="AGOBTP"/>
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:url" content="https://agobtpagogroup.vercel.app"/>
+  <meta name="twitter:url" content="https://agobtp.agogroup.co"/>
   <meta name="twitter:title" content="AGOBTP – Maîtrise d'œuvre et suivi de chantier à Lomé, Togo"/>
   <meta name="twitter:description" content="Construction, coordination, rapports hebdomadaires et paiement sécurisé par jalons. Diaspora ou résident, pilotez votre chantier à distance."/>
-  <meta name="twitter:image" content="https://agobtp.agogroup.vercel.app/assets/images/og-image.jpg"/>
+  <meta name="twitter:image" content="https://agobtp.agogroup.co/assets/images/og-image.jpg"/>
 
   <!-- Données structurées Schema.org -->
   <script type="application/ld+json">
@@ -57,9 +57,15 @@
       "@type": "HomeAndConstructionBusiness",
       "name": "AGOBTP – Pôle BTP d'AGOGROUP SARL",
       "description": "Maîtrise d'œuvre, suivi de chantier numérique et paiement par jalons à Lomé, Togo.",
-      "url": "https://agobtpagogroup.vercel.app",
-      "logo": "https://agobtpagogroup.vercel.app/favicon.svg",
-      "image": "https://agobtpagogroup.vercel.app/assets/images/og-image.jpg",
+      "url": "https://agobtp.agogroup.co",
+      "logo": "https://agobtp.agogroup.co/favicon.svg",
+      "image": "https://agobtp.agogroup.co/assets/images/og-image.jpg",
+      "sameAs": ["https://www.agogroup.co"],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "AGOGROUP SARL",
+        "url": "https://www.agogroup.co"
+      },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Lomé",
@@ -76,7 +82,6 @@
   </script>
 
   <style>
-    /* ----- STYLES (inchangés, sauf quelques ajouts pour la galerie et la section responsable) ----- */
     :root{
       --navy:#0D1B2E;--org:#E07B20;--orglt:#F5A050;--orgdk:#A05510;
       --teal:#1A7A5E;--teallt:#4AD9A4;--blue:#2D6DB5;
@@ -140,146 +145,40 @@
     .s-plan{background:rgba(45,109,181,.1);color:#2D6DB5}
     .tag{display:inline-block;font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;background:rgba(224,123,32,.1);color:var(--org);margin:2px}
 
-    /* ----- GALERIE PHOTOS DYNAMIQUE ----- */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-    @media (max-width: 900px) {
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 480px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-    }
-    .gallery-item {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      aspect-ratio: 4 / 3;
-      background: #f0e6dd;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      transition: transform 0.25s ease;
-    }
-    .gallery-item:hover {
-      transform: scale(1.02);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .gallery-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-      color: white;
-      padding: 16px 12px 12px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-    .load-more-container {
-      text-align: center;
-      margin: 32px 0 16px;
-    }
-    .load-more-btn {
-      background: var(--org);
-      color: white;
-      border: none;
-      border-radius: 40px;
-      padding: 14px 36px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--tr);
-      box-shadow: 0 6px 16px rgba(224,123,32,0.25);
-    }
-    .load-more-btn:hover {
-      background: var(--orgdk);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(224,123,32,0.35);
-    }
-    .photo-counter {
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 12px;
-    }
+    /* GALERIE */
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    @media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } }
+    .gallery-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 3; background: #f0e6dd; box-shadow: 0 6px 20px rgba(0,0,0,0.1); transition: transform 0.25s ease; }
+    .gallery-item:hover { transform: scale(1.02); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: white; padding: 16px 12px 12px; font-size: 14px; font-weight: 500; }
+    .load-more-container { text-align: center; margin: 32px 0 16px; }
+    .load-more-btn { background: var(--org); color: white; border: none; border-radius: 40px; padding: 14px 36px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all var(--tr); box-shadow: 0 6px 16px rgba(224,123,32,0.25); }
+    .load-more-btn:hover { background: var(--orgdk); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(224,123,32,0.35); }
+    .photo-counter { font-size: 14px; color: var(--muted); margin-top: 12px; }
 
-    /* ----- SECTION RESPONSABLE ----- */
-    .responsable-card {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      align-items: center;
-      background: var(--card);
-      border-radius: 24px;
-      padding: 32px;
-      border: 1px solid var(--border);
-      margin-top: 48px;
-    }
-    .responsable-photo {
-      flex: 0 0 160px;
-    }
-    .responsable-photo img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--org);
-      box-shadow: 0 8px 20px rgba(224,123,32,0.2);
-    }
-    .responsable-info {
-      flex: 1;
-    }
-    .responsable-name {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      color: var(--text);
-    }
-    .responsable-title {
-      font-size: 18px;
-      color: var(--org);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .responsable-quote {
-      font-style: italic;
-      font-size: 16px;
-      color: var(--muted);
-      border-left: 3px solid var(--org);
-      padding-left: 16px;
-      margin: 16px 0;
-    }
-    .qualifications {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-    .qualif-badge {
-      background: rgba(224,123,32,0.1);
-      color: var(--orgdk);
-      font-size: 13px;
-      font-weight: 500;
-      padding: 4px 12px;
-      border-radius: 30px;
-    }
+    /* RESPONSABLE */
+    .responsable-card { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; background: var(--card); border-radius: 24px; padding: 32px; border: 1px solid var(--border); margin-top: 48px; }
+    .responsable-photo { flex: 0 0 160px; }
+    .responsable-photo img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid var(--org); box-shadow: 0 8px 20px rgba(224,123,32,0.2); }
+    .responsable-info { flex: 1; }
+    .responsable-name { font-size: 28px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+    .responsable-title { font-size: 18px; color: var(--org); font-weight: 600; margin-bottom: 12px; }
+    .responsable-quote { font-style: italic; font-size: 16px; color: var(--muted); border-left: 3px solid var(--org); padding-left: 16px; margin: 16px 0; }
+    .qualifications { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .qualif-badge { background: rgba(224,123,32,0.1); color: var(--orgdk); font-size: 13px; font-weight: 500; padding: 4px 12px; border-radius: 30px; }
 
-    /* Service cards */
+    /* SERVICE CARDS */
     .service-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:22px;display:flex;gap:14px;align-items:flex-start;transition:all var(--tr)}
     .service-card:hover{border-color:rgba(224,123,32,.35);box-shadow:0 6px 24px rgba(224,123,32,.09);transform:translateY(-2px)}
     .service-icon{width:42px;height:42px;border-radius:10px;background:rgba(224,123,32,.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 
-    /* Process */
+    /* PROCESS */
     .process-step{display:flex;gap:18px;align-items:flex-start;margin-bottom:28px}
     .step-num{width:36px;height:36px;border-radius:50%;background:var(--org);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
 
-    /* Devis form */
+    /* DEVIS FORM */
     .devis-form{background:#fff;border-radius:16px;padding:36px;border:1px solid var(--border)}
     .input{width:100%;background:#F9F4EF;border:1.5px solid rgba(224,123,32,0.2);border-radius:8px;padding:11px 14px;font-size:14px;font-family:inherit;color:var(--text);outline:none;transition:border-color var(--tr);margin-bottom:14px}
     .input:focus{border-color:var(--org);box-shadow:0 0 0 3px rgba(224,123,32,0.1)}
@@ -310,7 +209,6 @@
 <nav>
   <div class="container nav-inner">
     <div class="nav-logo">
-      <!-- Logo SVG intégré directement (identique à favicon mais plus grand) -->
       <svg width="30" height="30" viewBox="0 0 32 32" fill="none" role="img" aria-label="Logo AGOBTP">
         <rect width="32" height="32" rx="5" fill="#1F3864"/>
         <polygon points="16,3 28,9 28,23 16,29 4,23 4,9" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
@@ -325,7 +223,7 @@
       Ago<span>Btp</span> · Pôle BTP
     </div>
     <div style="display:flex;gap:10px;align-items:center">
-      <a href="https://agogroup.vercel.app" class="nav-back" rel="noopener">← Holding</a>
+      <a href="https://www.agogroup.co" class="nav-back" rel="noopener">← Holding</a>
       <a href="#devis" class="nav-cta">Demander un devis</a>
     </div>
   </div>
@@ -361,16 +259,13 @@
       <h2 style="margin-bottom:8px">Nos réalisations en images</h2>
       <p style="font-size:15px;margin-bottom:24px;max-width:520px">Chaque projet est documenté et suivi via GlobalBuildTrust Digital — photos géolocalisées, rapports hebdomadaires.</p>
 
-      <!-- Conteneur de la galerie (rempli dynamiquement) -->
       <div id="galleryContainer" class="gallery-grid"></div>
 
-      <!-- Bouton "Voir plus" et compteur -->
       <div class="load-more-container">
         <button id="loadMoreBtn" class="load-more-btn">Voir plus de photos</button>
         <div id="photoCounter" class="photo-counter"></div>
       </div>
 
-      <!-- Cards réalisations (inchangées) -->
       <div class="grid-2">
         <div class="card">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
@@ -416,7 +311,7 @@
           <img src="assets/responsable/responsable.jpg" alt="AGODA-KOUSSEMA M. GERVAIS HUGUES, Responsable Pôle BTP" loading="lazy">
         </div>
         <div class="responsable-info">
-          <div class="responsable-name">Photo de AGODA-KOUSSEMA M. GERVAIS HUGUES</div>
+          <div class="responsable-name">AGODA-KOUSSEMA M. GERVAIS HUGUES</div>
           <div class="responsable-title">Responsable du Pôle BTP – AGOGROUP SARL</div>
           <div class="responsable-quote">« Large expérience en maîtrise d'œuvre et gestion de projets de construction en Afrique de l'Ouest. Mon engagement : transparence, qualité et respect des délais. »</div>
           <div class="qualifications">
@@ -431,7 +326,7 @@
     </div>
   </section>
 
-  <!-- SERVICES (inchangé) -->
+  <!-- SERVICES -->
   <section class="section" style="background:#fff">
     <div class="container">
       <span class="eyebrow">Ce qu'on fait</span>
@@ -532,11 +427,11 @@
       </div>
       <div>
         <div class="footer-title">Autres pôles</div>
-        <a href="https://agotechagogroup.vercel.app" class="footer-link">Pôle Digital →</a>
-        <a href="https://agolexagogroup.vercel.app" class="footer-link">Pôle Juridique →</a>
-        <a href="https://agogroup.vercel.app/investors" class="footer-link">Investisseurs</a>
-        <a href="https://agogroup.vercel.app/contact" class="footer-link">Contact</a>
-        <a href="https://agogroup.vercel.app" class="footer-link">Holding AgoGroup</a>
+        <a href="https://agotech.agogroup.co" class="footer-link">Pôle Digital →</a>
+        <a href="https://agolex.agogroup.co" class="footer-link">Pôle Juridique →</a>
+        <a href="https://www.agogroup.co/investors" class="footer-link">Investisseurs</a>
+        <a href="https://www.agogroup.co/contact" class="footer-link">Contact</a>
+        <a href="https://www.agogroup.co" class="footer-link">Holding AgoGroup</a>
       </div>
     </div>
     <div class="footer-bar">
@@ -553,28 +448,26 @@
     const loadMoreBtn = document.getElementById('loadMoreBtn');
     const photoCounter = document.getElementById('photoCounter');
 
-    const BATCH_SIZE = 12; // Nombre de photos chargées par clic
+    const BATCH_SIZE = 12;
     let currentIndex = 0;
     let photos = [];
 
-    // Charger la liste des photos depuis le fichier JSON généré
     fetch('photos-list.json')
-            .then(response => response.json())
-            .then(data => {
-              photos = data;
-              if (photos.length === 0) {
-                galleryContainer.innerHTML = '<p style="grid-column:1/-1;text-align:center">Aucune photo trouvée dans le dossier.</p>';
-                loadMoreBtn.style.display = 'none';
-                return;
-              }
-              // Afficher le premier lot
-              renderPhotos(0, BATCH_SIZE);
-            })
-            .catch(error => {
-              console.error('Erreur chargement photos:', error);
-              galleryContainer.innerHTML = '<p style="grid-column:1/-1;text-align:center">Impossible de charger les photos. Vérifiez que photos-list.json existe.</p>';
-              loadMoreBtn.style.display = 'none';
-            });
+      .then(response => response.json())
+      .then(data => {
+        photos = data;
+        if (photos.length === 0) {
+          galleryContainer.innerHTML = '<p style="grid-column:1/-1;text-align:center">Aucune photo trouvée dans le dossier.</p>';
+          loadMoreBtn.style.display = 'none';
+          return;
+        }
+        renderPhotos(0, BATCH_SIZE);
+      })
+      .catch(error => {
+        console.error('Erreur chargement photos:', error);
+        galleryContainer.innerHTML = '<p style="grid-column:1/-1;text-align:center">Impossible de charger les photos. Vérifiez que photos-list.json existe.</p>';
+        loadMoreBtn.style.display = 'none';
+      });
 
     function renderPhotos(start, count) {
       const end = Math.min(start + count, photos.length);
@@ -582,16 +475,13 @@
         const photo = photos[i];
         const item = document.createElement('div');
         item.className = 'gallery-item';
-
         const img = document.createElement('img');
         img.src = photo.src;
         img.alt = photo.alt || photo.title;
         img.loading = 'lazy';
-
         const caption = document.createElement('div');
         caption.className = 'gallery-caption';
         caption.textContent = photo.title;
-
         item.appendChild(img);
         item.appendChild(caption);
         galleryContainer.appendChild(item);
@@ -604,7 +494,6 @@
       const displayed = currentIndex;
       const total = photos.length;
       photoCounter.textContent = `${displayed} / ${total} photos affichées`;
-
       if (currentIndex >= total) {
         loadMoreBtn.style.display = 'none';
         photoCounter.textContent += ' – Toutes les photos sont chargées';
